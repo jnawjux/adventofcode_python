@@ -29,7 +29,8 @@ def adjusted_fuel_needed(x):
         return start
 
 
-fuel_calculation = sum([fuel_needed(val) for val in starting_vals])
+fuel_calculation = sum(
+    [fuel_needed(val) for val in starting_vals])
 
 print(
     f"Fuel Needed: {fuel_calculation}")
