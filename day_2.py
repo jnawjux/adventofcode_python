@@ -25,4 +25,26 @@ def program_alarm(arr):
     return arr[0]
 
 
+def find_pointer(arr, goal):
+    for i in range(0, (len(arr) + 1), 4):
+        if arr[i] == 1:
+            assignment = arr[i + 3]
+            total = arr[arr[i + 1]] + arr[arr[i + 2]]
+            if total == goal:
+                print("FOUND!")
+            else:
+                arr[assignment] = total
+        elif arr[i] == 2:
+            assignment = arr[i + 3]
+            total = arr[arr[i + 1]] * arr[arr[i + 2]]
+            if total == goal:
+                print("FOUND!")
+            else:
+                arr[assignment] = total
+        elif arr[i] == 99:
+            break
+
+
 print(program_alarm(testInput))
+
+print(find_pointer(testInput, 19690720))
